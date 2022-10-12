@@ -1,8 +1,8 @@
 import random
+from time import sleep
 import chess.svg
 import pygame.display
 from chessboard import display
-from time import sleep
 from pathlib import Path
 
 TIME = .1
@@ -71,14 +71,14 @@ class Main:
             elif (piece == "K"):
                 screen.blit(K, ((x * 100)+10, (y * 100)+10))
             self.screen = pygame.display.update()
-        #sleep(10)
+        sleep(10)
 
-#window = Main()
-#window.gameloop()
+window = Main()
+window.gameloop()
 
-#Pseudo: in a while loop inside the main while loop (that acts as the human move, ie, wait for input of piece),
-# have the two clicks (and in the future a drag), that together make a UCI move and check it against legal moves. then
-# make that move the 'enginemove' and update BOTH squares of the move (incase there is a capture).
+# TODO: in a while loop inside the main while loop (that acts as the human move, ie, wait for input of piece),
+#  have the two clicks (and in the future a drag), that together make a UCI move and check it against legal moves. then
+#  make that move the 'enginemove' and update BOTH squares of the move (incase there is a capture).
 
 #- the mouse_x position relative to the screen is going to be in relation to the monitor so: x_real = (monitor_dimension_x / 2) - 400
 #- the drag (like in chess.com) remains true as long as a) the mouse stops on a legal move, b) lands inside the display
